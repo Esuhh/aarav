@@ -1,0 +1,23 @@
+# a. Basic workflow file name and structure
+name: CI Basics
+
+# b. & d. Trigger on every push to the main branch AND pull request events
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # c. Runs a simple command
+      - name: Run a one-line script
+        run: echo "Hello World"
+
+      - name: Run a multi-line script
+        run: |
+          echo "Add other commands here"
+          echo "Workflow is successfully running!"
